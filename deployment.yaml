@@ -50,13 +50,14 @@ metadata:
   annotations:
     allow.http: "false"
 spec:
-  rules:
-  - host: go.rancher.dev-ops-ninja.com
+   rules:
+  - host: go.rancher-devops.tce.pa
     http:
       paths:
-        - path: /
-          backend:
-            service:
-              name: go-service
-              port: 80
-            
+      - backend:
+          service:
+            name: go-service
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
