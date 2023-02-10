@@ -3,7 +3,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: go-server
+  name: nginx
   #namespace: go
   labels:
     app: goapi
@@ -18,10 +18,10 @@ spec:
         app: goapi
     spec:
       imagePullSecrets:
-      - name: pipeline-docker-registry
+      - name: nginx
       containers:
       - name: goapi
-        image: golang:1.11
+        image: nginx:latest
         ports:
         - containerPort: 80
 
