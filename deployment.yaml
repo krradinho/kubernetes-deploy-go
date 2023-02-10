@@ -45,13 +45,10 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  #namespace: go
   name: go-ingress
-  annotations:
-    allow.http: "false"
 spec:
-   rules:
-  - host: go.rancher-devops.tce.pa
+  rules:
+  - host: go.rancher.devops.tce.pa
     http:
       paths:
       - backend:
